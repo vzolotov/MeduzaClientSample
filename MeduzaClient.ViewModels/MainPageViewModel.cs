@@ -10,18 +10,21 @@ using MeduzaClient.ViewModels.Common;
 
 namespace MeduzaClient.ViewModels
 {
-    public class MainViewModel : ViewModelBase
+    public class MainPageViewModel : ViewModelBase
     {
         private INavigationService  _navigation;
         private IDataService _dataService;
-        public MainViewModel(INavigationService navigation, IDataService dataService)
+        public MainPageViewModel(INavigationService navigation, IDataService dataService)
         {
             _navigation = navigation;
             _dataService = dataService;
-            NavigateToNews = new ActionCommand(NavigateHandler);
-        }
-
+            NavigateToNewsCommand = new ActionCommand<Document>(NavigationHandler);
+        }      
+        
         private List<Document> _main;
+        /// <summary>
+        /// Список новостей
+        /// </summary>
         public List<Document> Docs
         {
             get
@@ -35,11 +38,11 @@ namespace MeduzaClient.ViewModels
             }
         }
 
-        private void NavigateHandler()
-        {
-            _navigation.NavigateToViewModel<NewsViewModel>();
-        }
-
+        /// <summary>
+        /// Загрузка данных при переходе на страницу
+        /// </summary>
+        /// <param name="navigationData">данные передоваемые при навигации</param>
+        /// <returns></returns>
         public override async Task OnNavigatedToAsync(object navigationData)
         {
             var data = await _dataService.GetAllDataAsync();
@@ -47,6 +50,14 @@ namespace MeduzaClient.ViewModels
             await base.OnNavigatedToAsync(navigationData);
         }
 
-        public ActionCommand NavigateToNews { get; private set; }
+        /// <summary>
+        /// Команда навигации на выбранную новость
+        /// </summary>
+        public ActionCommand<Document> NavigateToNewsCommand { get; private set; }
+
+        private void NavigationHandler(Document obj)
+        {
+            _navigation.NavigateToViewModel<NewsPageViewModel>(obj);
+        }
     }
 }

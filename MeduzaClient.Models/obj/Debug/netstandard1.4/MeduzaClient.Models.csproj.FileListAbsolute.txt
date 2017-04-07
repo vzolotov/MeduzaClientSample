@@ -4,4 +4,4 @@ c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.M
 c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Models\bin\Debug\netstandard1.4\MeduzaClient.Models.pdb
 c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Models\obj\Debug\netstandard1.4\MeduzaClient.Models.dll
 c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Models\obj\Debug\netstandard1.4\MeduzaClient.Models.pdb
-c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Models\obj\Debug\netstandard1.4\MeduzaClient.Models.csprojResolveAssemblyReference.cache
+C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Models\obj\Debug\netstandard1.4\MeduzaClient.Models.csprojResolveAssemblyReference.cache

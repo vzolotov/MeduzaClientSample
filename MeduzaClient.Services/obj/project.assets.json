@@ -4491,10 +4491,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Services\\MeduzaClient.Services.csproj",
+      "projectUniqueName": "C:\\Users\\Slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Services\\MeduzaClient.Services.csproj",
       "projectName": "MeduzaClient.Services",
-      "projectPath": "c:\\users\\slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Services\\MeduzaClient.Services.csproj",
-      "outputPath": "c:\\users\\slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Services\\obj\\",
+      "projectPath": "C:\\Users\\Slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Services\\MeduzaClient.Services.csproj",
+      "outputPath": "C:\\Users\\Slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Services\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netstandard1.4"
@@ -4502,8 +4502,8 @@
       "frameworks": {
         "netstandard1.4": {
           "projectReferences": {
-            "c:\\users\\slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Models\\MeduzaClient.Models.csproj": {
-              "projectPath": "c:\\users\\slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Models\\MeduzaClient.Models.csproj"
+            "C:\\Users\\Slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Models\\MeduzaClient.Models.csproj": {
+              "projectPath": "C:\\Users\\Slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Models\\MeduzaClient.Models.csproj"
             }
           }
         }

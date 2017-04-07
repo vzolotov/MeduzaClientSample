@@ -4,16 +4,31 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using MeduzaClient.Views.Helpers;
 using System.Linq;
+using MeduzaClient.Views;
 
 namespace MeduzaClient.Services
 {
     public sealed class NavigationService : INavigationService
     {
+
+        Frame _mainFrame;
         /// <summary>
         /// Не оптимально конечно, но для тестового задания хватит
         /// </summary>
-        Frame Frame => Window.Current.Content.GetAllChildren<SplitView>().FirstOrDefault().GetAllChildren<Frame>().FirstOrDefault();
-        /// <summary>
+        Frame Frame
+        {
+            get
+            {
+                if (_mainFrame == null)
+                {
+                    var frame = (Frame)Window.Current.Content;
+                    var page = (FirstPage)frame.Content;
+                    var split = page.GetAllChildren<SplitView>().FirstOrDefault();
+                    _mainFrame = (Frame)split.Content;
+                }
+                return _mainFrame;
+            }
+        }
         /// Возможность перехода на другую страницу
         /// </summary>
         public bool CanGoBack
@@ -100,7 +115,7 @@ namespace MeduzaClient.Services
             var viewName = viewModelType.Name.Replace(
                 viewModelType.Name,
                 viewModelType.Name.Replace("ViewModel", string.Empty));
-            var result = viewType.AssemblyQualifiedName.Replace(viewType.Name, viewType.Name.Replace("Main", viewName));
+            var result = viewType.AssemblyQualifiedName.Replace(viewType.Name, viewName);
             var type = Type.GetType(result);
             return type;
         }

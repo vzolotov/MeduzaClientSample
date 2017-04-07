@@ -286,3 +286,7 @@ c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\o
 c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\obj\x86\Debug\Views\FirstPage.g.cs
 c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\obj\x86\Debug\Views\FirstPage.xaml
 c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\obj\x86\Debug\Views\FirstPage.xbf
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\Microsoft.Xaml.Interactions.dll
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\Microsoft.Xaml.Interactivity.dll
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\obj\x86\Debug\Microsoft.Xaml.Interactions.pri.xml
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml

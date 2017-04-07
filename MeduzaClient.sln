@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeduzaClient.ViewModels", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeduzaClient.Services", "MeduzaClient.Services\MeduzaClient.Services.csproj", "{73A090C3-D177-4FF9-B068-30B8E3949810}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeduzaClient.Tests", "MeduzaClient.Tests\MeduzaClient.Tests.csproj", "{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,22 @@ Global
 		{73A090C3-D177-4FF9-B068-30B8E3949810}.Release|x64.Build.0 = Release|Any CPU
 		{73A090C3-D177-4FF9-B068-30B8E3949810}.Release|x86.ActiveCfg = Release|Any CPU
 		{73A090C3-D177-4FF9-B068-30B8E3949810}.Release|x86.Build.0 = Release|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Debug|ARM.Build.0 = Debug|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Debug|x64.Build.0 = Debug|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Debug|x86.Build.0 = Debug|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Release|ARM.ActiveCfg = Release|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Release|ARM.Build.0 = Release|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Release|x64.ActiveCfg = Release|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Release|x64.Build.0 = Release|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Release|x86.ActiveCfg = Release|Any CPU
+		{8EBF5FCA-E38D-45E8-BEE3-18005922E8F1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

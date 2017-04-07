@@ -7,11 +7,21 @@ namespace MeduzaClient.ViewModels
 {
     public class ViewModelBase: INotifyPropertyChanged
     {
+        /// <summary>
+        /// Обработка навигации на страницу
+        /// </summary>
+        /// <param name="navigationData"></param>
+        /// <returns></returns>
         public virtual Task OnNavigatedToAsync(object navigationData)
         {
             return Task.CompletedTask;
         }
 
+        /// <summary>
+        /// Обработка навигации со страницы
+        /// </summary>
+        /// <param name="navigationData"></param>
+        /// <returns></returns>
         public virtual Task OnNavigatedFrom(object navigationData)
         {
             return Task.CompletedTask;

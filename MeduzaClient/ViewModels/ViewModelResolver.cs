@@ -24,12 +24,14 @@ namespace MeduzaClient.ViewModels
             builder.RegisterType<CacheService>().As<ICacheService>().SingleInstance();
             builder.RegisterType<DataService>().As<IDataService>().SingleInstance();
             //VM
-            builder.RegisterType<MainViewModel>().SingleInstance();
-            builder.RegisterType<NewsViewModel>().SingleInstance();
+            builder.RegisterType<MainPageViewModel>().SingleInstance();
+            builder.RegisterType<NewsPageViewModel>().SingleInstance();
+            builder.RegisterType<FirstPageViewModel>().SingleInstance();
             Container = builder.Build();
         }
 
-        public static MainViewModel MainViewModel => Container.Resolve<MainViewModel>();
-        public static NewsViewModel NewsViewModel => Container.Resolve<NewsViewModel>();
+        public static MainPageViewModel MainViewModel => Container.Resolve<MainPageViewModel>();
+        public static NewsPageViewModel NewsViewModel => Container.Resolve<NewsPageViewModel>();
+        public static FirstPageViewModel FirstViewModel => Container.Resolve<FirstPageViewModel>();
     }
 }

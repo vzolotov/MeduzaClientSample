@@ -4478,10 +4478,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Models\\MeduzaClient.Models.csproj",
+      "projectUniqueName": "C:\\Users\\Slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Models\\MeduzaClient.Models.csproj",
       "projectName": "MeduzaClient.Models",
-      "projectPath": "c:\\users\\slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Models\\MeduzaClient.Models.csproj",
-      "outputPath": "c:\\users\\slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Models\\obj\\",
+      "projectPath": "C:\\Users\\Slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Models\\MeduzaClient.Models.csproj",
+      "outputPath": "C:\\Users\\Slava\\documents\\visual studio 2017\\Projects\\MeduzaClient\\MeduzaClient.Models\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netstandard1.4"

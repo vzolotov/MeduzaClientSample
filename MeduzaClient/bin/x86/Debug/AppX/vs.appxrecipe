@@ -31,13 +31,13 @@
     <AppXManifest Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-07T15:23:12.038</Modified>
+      <Modified>2017-04-07T17:42:55.933</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\MeduzaClient.exe">
       <PackagePath>entrypoint\MeduzaClient.exe</PackagePath>
-      <Modified>2017-04-07T15:23:08.308</Modified>
+      <Modified>2017-04-07T17:42:53.142</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\Autofac\4.5.0\lib\netstandard1.1\Autofac.dll">
       <PackagePath>Autofac.dll</PackagePath>
@@ -102,6 +102,14 @@
     <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\Microsoft.VisualBasic\10.0.1\lib\netcore50\Microsoft.VisualBasic.dll">
       <PackagePath>Microsoft.VisualBasic.dll</PackagePath>
       <Modified>2016-06-11T20:13:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\Microsoft.Xaml.Behaviors.Uwp.Managed\2.0.0\lib\uap10.0\Microsoft.Xaml.Interactions.dll">
+      <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
+      <Modified>2016-10-19T14:07:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\Microsoft.Xaml.Behaviors.Uwp.Managed\2.0.0\lib\uap10.0\Microsoft.Xaml.Interactivity.dll">
+      <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
+      <Modified>2016-10-19T14:07:18.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\Newtonsoft.Json\10.0.2\lib\netstandard1.3\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -529,15 +537,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Models\bin\Debug\netstandard1.4\MeduzaClient.Models.dll">
       <PackagePath>MeduzaClient.Models.dll</PackagePath>
-      <Modified>2017-04-07T14:42:09.008</Modified>
+      <Modified>2017-04-07T17:42:45.476</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Services\bin\Debug\netstandard1.4\MeduzaClient.Services.dll">
       <PackagePath>MeduzaClient.Services.dll</PackagePath>
-      <Modified>2017-04-07T15:02:21.363</Modified>
+      <Modified>2017-04-07T17:42:46.004</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\bin\Debug\netstandard1.4\MeduzaClient.ViewModels.dll">
       <PackagePath>MeduzaClient.ViewModels.dll</PackagePath>
-      <Modified>2017-04-07T15:02:21.935</Modified>
+      <Modified>2017-04-07T17:42:46.525</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -579,7 +587,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\MeduzaClient.xr.xml">
       <PackagePath>MeduzaClient.xr.xml</PackagePath>
-      <Modified>2017-04-07T15:23:07.892</Modified>
+      <Modified>2017-04-07T17:42:52.779</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -588,11 +596,11 @@
     <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-07T15:23:11.370</Modified>
+      <Modified>2017-04-07T17:42:55.313</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\Core\MeduzaClient.exe">
       <PackagePath>MeduzaClient.exe</PackagePath>
-      <Modified>2017-04-07T15:23:12.031</Modified>
+      <Modified>2017-04-07T17:42:55.926</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

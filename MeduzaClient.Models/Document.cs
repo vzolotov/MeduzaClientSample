@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using MeduzaClient.Models.Helpers;
-using MeduzaClient.Models.Card;
-using MeduzaClient.Models.Enum;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+﻿using Newtonsoft.Json;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace MeduzaClient.Models
 {
+    public class EntityBase : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName]string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
+    }
     public class Image
     {
         public bool show { get; set; }
@@ -94,13 +99,27 @@ namespace MeduzaClient.Models
         public object credit { get; set; }
     }
 
-    public class Document
+    public class Document: EntityBase
     {
         public string document_type { get; set; }
         public Prefs prefs { get; set; }
         public Source source { get; set; }
         public int version { get; set; }
-        public string title { get; set; }
+
+        private string _title;
+        [JsonProperty("title")]
+        public string Title
+        {
+            get
+            {
+                return _title;
+            }
+            set
+            {
+                _title = value;
+                OnPropertyChanged();
+            }
+        }
         public string url { get; set; }
         public int modified_at { get; set; }
         public int published_at { get; set; }

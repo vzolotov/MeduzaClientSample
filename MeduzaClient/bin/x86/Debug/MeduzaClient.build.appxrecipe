@@ -10,22 +10,22 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>a8777f73-1209-4f2b-8abc-7a2d1e67ee97</PackageIdentityName>
     <PackageIdentityPublisher>CN=Slava</PackageIdentityPublisher>
-    <IntermediateOutputPath>c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\MeduzaClient.exe">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\MeduzaClient.exe">
       <PackagePath>entrypoint\MeduzaClient.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\Autofac\4.5.0\lib\netstandard1.1\Autofac.dll">
@@ -75,6 +75,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\Microsoft.VisualBasic\10.0.1\lib\netcore50\Microsoft.VisualBasic.dll">
       <PackagePath>Microsoft.VisualBasic.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\Microsoft.Xaml.Behaviors.Uwp.Managed\2.0.0\lib\uap10.0\Microsoft.Xaml.Interactions.dll">
+      <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\Microsoft.Xaml.Behaviors.Uwp.Managed\2.0.0\lib\uap10.0\Microsoft.Xaml.Interactivity.dll">
+      <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\Newtonsoft.Json\10.0.2\lib\netstandard1.3\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -394,56 +400,56 @@
     <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\System.Xml.XmlSerializer\4.0.11\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Models\bin\Debug\netstandard1.4\MeduzaClient.Models.dll">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Models\bin\Debug\netstandard1.4\MeduzaClient.Models.dll">
       <PackagePath>MeduzaClient.Models.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Services\bin\Debug\netstandard1.4\MeduzaClient.Services.dll">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Services\bin\Debug\netstandard1.4\MeduzaClient.Services.dll">
       <PackagePath>MeduzaClient.Services.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\bin\Debug\netstandard1.4\MeduzaClient.ViewModels.dll">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\bin\Debug\netstandard1.4\MeduzaClient.ViewModels.dll">
       <PackagePath>MeduzaClient.ViewModels.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\MeduzaClient.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\MeduzaClient.xr.xml">
       <PackagePath>MeduzaClient.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\Core\MeduzaClient.exe">
+    <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\Core\MeduzaClient.exe">
       <PackagePath>MeduzaClient.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

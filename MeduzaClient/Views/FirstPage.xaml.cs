@@ -20,11 +20,17 @@ namespace MeduzaClient.Views
     /// <summary>
     /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
     /// </summary>
-    public sealed partial class FirstPage : Page
+    public sealed partial class FirstPage
     {
         public FirstPage()
         {
             this.InitializeComponent();
+        }
+
+        private void OnMenuButtonClicked(object sender, RoutedEventArgs e)
+        {
+            ShellSplitView.IsPaneOpen = !ShellSplitView.IsPaneOpen;
+            ((RadioButton)sender).IsChecked = false;
         }
     }
 }
