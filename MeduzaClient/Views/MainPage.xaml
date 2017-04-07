@@ -1,0 +1,40 @@
+﻿<views:BasePage
+    xmlns:views="using:MeduzaClient.Views"
+    x:Class="MeduzaClient.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MeduzaClient"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:datatype="using:MeduzaClient.Models"
+    mc:Ignorable="d" 
+    DataContext="{Binding MainViewModel, Mode=OneWay, Source={StaticResource Locator}}">
+    <SplitView>
+        <SplitView.Pane>
+            <ListView></ListView>
+        </SplitView.Pane>    
+    <SplitView.Content>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <GridView ItemsSource="{Binding Docs}" 
+                          ItemContainerStyle="{StaticResource GridViewItemStyle}">
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsWrapGrid/>
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+                    <GridView.ItemTemplate>
+                        <DataTemplate>                            
+                            <TextBlock Text="{Binding title}" TextWrapping="Wrap"></TextBlock>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </Grid>
+        </SplitView.Content>
+    </SplitView>
+</views:BasePage>

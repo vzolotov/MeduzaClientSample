@@ -1,0 +1,9 @@
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Services\bin\Debug\netstandard1.4\MeduzaClient.Services.deps.json
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Services\obj\Debug\netstandard1.4\MeduzaClient.Services.csprojResolveAssemblyReference.cache
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Services\obj\Debug\netstandard1.4\MeduzaClient.Services.AssemblyInfo.cs
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Services\bin\Debug\netstandard1.4\MeduzaClient.Services.dll
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Services\bin\Debug\netstandard1.4\MeduzaClient.Services.pdb
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Services\bin\Debug\netstandard1.4\MeduzaClient.Models.dll
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Services\bin\Debug\netstandard1.4\MeduzaClient.Models.pdb
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Services\obj\Debug\netstandard1.4\MeduzaClient.Services.dll
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Services\obj\Debug\netstandard1.4\MeduzaClient.Services.pdb

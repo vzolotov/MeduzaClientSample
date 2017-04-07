@@ -1,0 +1,11 @@
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\bin\Debug\netstandard1.4\MeduzaClient.ViewModels.deps.json
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\bin\Debug\netstandard1.4\MeduzaClient.ViewModels.dll
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\obj\Debug\netstandard1.4\MeduzaClient.ViewModels.AssemblyInfo.cs
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\bin\Debug\netstandard1.4\MeduzaClient.ViewModels.pdb
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\obj\Debug\netstandard1.4\MeduzaClient.ViewModels.dll
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\obj\Debug\netstandard1.4\MeduzaClient.ViewModels.pdb
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\bin\Debug\netstandard1.4\MeduzaClient.Models.dll
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\bin\Debug\netstandard1.4\MeduzaClient.Services.dll
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\bin\Debug\netstandard1.4\MeduzaClient.Services.pdb
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\bin\Debug\netstandard1.4\MeduzaClient.Models.pdb
+c:\users\slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\obj\Debug\netstandard1.4\MeduzaClient.ViewModels.csprojResolveAssemblyReference.cache
