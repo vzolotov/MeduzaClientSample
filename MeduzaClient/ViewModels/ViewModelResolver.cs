@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Autofac;
 using MeduzaClient.Services;
 using MeduzaClient.Services.Interfaces;
+using MeduzaClient.Database;
+using MeduzaClient.Services.Database;
 
 namespace MeduzaClient.ViewModels
 {
@@ -23,6 +25,9 @@ namespace MeduzaClient.ViewModels
             builder.RegisterType<ApiService>().As<IApiService>().SingleInstance();
             builder.RegisterType<CacheService>().As<ICacheService>().SingleInstance();
             builder.RegisterType<DataService>().As<IDataService>().SingleInstance();
+            builder.RegisterType<DataContext>().SingleInstance();
+            builder.RegisterType<DbManager>().As<IDbManager>().SingleInstance();
+            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().SingleInstance();
             //VM
             builder.RegisterType<MainPageViewModel>().SingleInstance();
             builder.RegisterType<NewsPageViewModel>().SingleInstance();

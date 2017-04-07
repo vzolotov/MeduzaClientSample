@@ -95,6 +95,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Database\DataContext.cs" />
+    <Compile Include="Database\DbManager.cs" />
+    <Compile Include="Database\Repository.cs" />
+    <Compile Include="Database\UnitOfWork.cs" />
+    <Compile Include="Migrations\20170407215241_FirsMigration.cs" />
+    <Compile Include="Migrations\20170407215241_FirsMigration.designer.cs">
+      <DependentUpon>20170407215241_FirsMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\DataContextModelSnapshot.cs" />
+    <Compile Include="Services\CacheService.cs" />
     <Compile Include="Services\ConnectionService.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Views\FirstPage.xaml.cs">
@@ -154,6 +164,15 @@
   <ItemGroup>
     <PackageReference Include="Autofac">
       <Version>4.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore">
+      <Version>1.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite">
+      <Version>1.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+      <Version>1.1.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>5.2.3</Version>

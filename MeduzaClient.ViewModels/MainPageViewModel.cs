@@ -57,6 +57,7 @@ namespace MeduzaClient.ViewModels
 
         private void NavigationHandler(Document obj)
         {
+            Docs = null;
             _navigation.NavigateToViewModel<NewsPageViewModel>(obj);
         }
     }

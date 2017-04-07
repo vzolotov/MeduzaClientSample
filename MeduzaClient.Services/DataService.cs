@@ -6,6 +6,8 @@ using MeduzaClient.Models.Page;
 using MeduzaClient.Services.Interfaces;
 using System.Linq;
 using MeduzaClient.Models;
+using MeduzaClient.Services.Helpers;
+using MeduzaClient.Models.Entity;
 
 namespace MeduzaClient.Services
 {
@@ -32,11 +34,15 @@ namespace MeduzaClient.Services
                 result = data.Documents.Select(x => x.Value).Where(
                     x => x != null && !string.IsNullOrWhiteSpace(x.document_type)
                     && x.document_type.Equals("news", StringComparison.OrdinalIgnoreCase));
-                //await _cacheService.SaveData(result);
+
+                var cache = MapperHelper.MapToEntityArray(result);
+
+                await _cacheService.SaveDataAsync(cache);
             }
             else
             {
-                result = await _cacheService.GetData<IEnumerable<Document>>();
+                var cache = await _cacheService.GetDataAsync<DocumentEntity>();
+                result = MapperHelper.MapToDocArray(cache);
             }
             return result;
         }
