@@ -246,6 +246,7 @@ ModelManifest.xml
 
 Resource.Designer.cs
 
-
-
-
+MeduzaClient/bin
+MeduzaClient/obj
+*.dll
+*.exe

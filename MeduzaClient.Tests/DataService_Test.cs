@@ -13,7 +13,7 @@ namespace MeduzaClient.Tests
         }
 
         [Test]
-        public async Task GetCacheData_Test()
+        public void GetCacheData_Test()
         {
 
         }
