@@ -6,41 +6,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:datatype="using:MeduzaClient.Models"
     xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:controls="using:MeduzaClient.Views.Controls"
     x:Class="MeduzaClient.Views.MainPage"
     mc:Ignorable="d" 
     Name="page"
     DataContext="{Binding MainViewModel, Mode=OneWay, Source={StaticResource Locator}}">
-    <SplitView>
-        <SplitView.Pane>
-            <ListView/>
-        </SplitView.Pane>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <GridView x:Name="gridView" ItemsSource="{Binding Docs}" 
-                      ItemContainerStyle="{StaticResource GridViewItemStyle}"
-                      SelectionMode="Single">
-                <GridView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <ItemsWrapGrid/>
-                    </ItemsPanelTemplate>
-                </GridView.ItemsPanel>
-                <GridView.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Title}" TextWrapping="Wrap"/>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-                <Interactivity:Interaction.Behaviors>
-                    <Core:EventTriggerBehavior EventName="SelectionChanged">
-                        <Core:InvokeCommandAction Command="{Binding DataContext.NavigateToNewsCommand, ElementName=page}" 
-                            CommandParameter="{Binding SelectedItem, ElementName=gridView}"/>
-                    </Core:EventTriggerBehavior>
-                </Interactivity:Interaction.Behaviors>
-            </GridView>
-        </Grid>
-    </SplitView>
+    <controls:CustomGrid
+        HeaderContent="Новости"
+        ItemsContent="{Binding Docs}"
+        ItemClickCommand="{Binding NavigateToNewsCommand}"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"/>
 </local:BasePage>

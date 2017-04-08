@@ -1,5 +1,6 @@
 App.xbf
 Styles\CommonStyles.xbf
+Views\Controls\CustomGrid.xbf
 Views\FirstPage.xbf
 Views\MainPage.xbf
 Views\NewsPage.xbf

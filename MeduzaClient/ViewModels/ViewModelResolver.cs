@@ -19,7 +19,9 @@ namespace MeduzaClient.ViewModels
         {
             var builder = new ContainerBuilder();
             //services
+            builder.RegisterType<NotifycationService>().As<INotifycationService>().SingleInstance();
             builder.RegisterType<SettingsService>().As<ISettingsService>().SingleInstance();
+            builder.RegisterType<OpenLinkService>().As<IOpenLinkService>().SingleInstance();
             builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstance();
             builder.RegisterType<ConnectionService>().As<IConnectionService>().SingleInstance();
             builder.RegisterType<ApiService>().As<IApiService>().SingleInstance();

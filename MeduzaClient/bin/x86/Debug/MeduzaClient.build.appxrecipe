@@ -478,6 +478,9 @@
     <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\System.Xml.XmlSerializer\4.0.11\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\WinRTXamlToolkit\2.3.0\lib\uap10.0\WinRTXamlToolkit.dll">
+      <PackagePath>WinRTXamlToolkit.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Models\bin\Debug\netstandard1.4\MeduzaClient.Models.dll">
       <PackagePath>MeduzaClient.Models.dll</PackagePath>
     </AppxPackagedFile>
@@ -522,6 +525,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\WinRTXamlToolkit\2.3.0\lib\uap10.0\WinRTXamlToolkit\WinRTXamlToolkit.xr.xml">
+      <PackagePath>WinRTXamlToolkit\WinRTXamlToolkit.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\WinRTXamlToolkit\2.3.0\lib\uap10.0\WinRTXamlToolkit\Properties\WinRTXamlToolkit.rd.xml">
+      <PackagePath>WinRTXamlToolkit\Properties\WinRTXamlToolkit.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="ItemsContent" />
+    <RootPropertyPathName Name="Title" />
+    <RootPropertyPathName Name="HeaderContent" />
     <RootPropertyPathName Name="FirstViewModel" />
     <RootPropertyPathName Name="GotoHomeCommand" />
     <RootPropertyPathName Name="MainViewModel" />
     <RootPropertyPathName Name="Docs" />
-    <RootPropertyPathName Name="Title" />
-    <RootPropertyPathName Name="DataContext" />
     <RootPropertyPathName Name="NavigateToNewsCommand" />
-    <RootPropertyPathName Name="SelectedItem" />
     <RootPropertyPathName Name="NewsViewModel" />
     <RootPropertyPathName Name="Document" />
   </Roots.PropertyPathNames>
@@ -31,6 +31,8 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="Text" />
       <RootProperty Name="Style" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="TextWrapping" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.FrameworkElement">
@@ -62,6 +64,15 @@
       <RootProperty Name="IsHoldingEnabled" />
       <RootProperty Name="Opacity" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.DataTemplate">
+      <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="ElementName" />
+      <RootProperty Name="Mode" />
+      <RootProperty Name="Source" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />
       <RootProperty Name="Value" />
@@ -90,6 +101,10 @@
       <RootProperty Name="SelectedPointerOverBackground" />
       <RootProperty Name="SelectedBackground" />
       <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions">
+      <RootMethod Name="GetSystemCursor" />
+      <RootMethod Name="SetSystemCursor" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.TemplateBindingExtension" />
@@ -171,16 +186,28 @@
       <RootMethod Name="GetAccessibilityView" />
       <RootMethod Name="SetAccessibilityView" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
+    <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.GridView">
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="ItemContainerStyle" />
+      <RootProperty Name="SelectionMode" />
+      <RootProperty Name="IsItemClickEnabled" />
+      <RootProperty Name="ItemTemplate" />
+      <RootEvent Name="ItemClick" />
+    </RootType>
+    <RootType FullName="MeduzaClient.Views.Controls.CustomGrid">
+      <RootProperty Name="HeaderContent" />
+      <RootProperty Name="ItemsContent" />
+      <RootProperty Name="ItemClickCommand" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+    </RootType>
     <RootType FullName="MeduzaClient.Views.BasePage">
       <RootProperty Name="DataContext" />
       <RootProperty Name="Content" />
       <RootProperty Name="Name" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="Mode" />
-      <RootProperty Name="Source" />
-      <RootProperty Name="ElementName" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
       <RootProperty Name="DisplayMode" />
@@ -204,25 +231,11 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
       <RootProperty Name="Command" />
-      <RootProperty Name="CommandParameter" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Frame" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Frame">
+      <RootProperty Name="Margin" />
+    </RootType>
     <RootType FullName="MeduzaClient.Views.FirstPage" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ListView" />
-    <RootType FullName="Windows.UI.Xaml.Controls.GridView">
-      <RootProperty Name="ItemsSource" />
-      <RootProperty Name="ItemContainerStyle" />
-      <RootProperty Name="SelectionMode" />
-      <RootProperty Name="ItemsPanel" />
-      <RootProperty Name="ItemTemplate" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ItemsPanelTemplate">
-      <RootProperty Name="Template" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ItemsWrapGrid" />
-    <RootType FullName="Windows.UI.Xaml.DataTemplate">
-      <RootProperty Name="Template" />
-    </RootType>
     <RootType FullName="MeduzaClient.Views.MainPage" />
     <RootType FullName="MeduzaClient.Views.NewsPage" />
   </Roots.RootTypes>

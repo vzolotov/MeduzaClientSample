@@ -32,6 +32,6 @@
                 </RadioButton>
             </StackPanel>
         </SplitView.Pane>
-        <Frame/>
+        <Frame Margin="40, 40, 0, 40"/>
     </SplitView>
 </local:BasePage>

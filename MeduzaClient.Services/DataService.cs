@@ -32,8 +32,7 @@ namespace MeduzaClient.Services
             {
                 var data = await _apiService.GetAllAsync();
                 result = data.Documents.Select(x => x.Value).Where(
-                    x => x != null && !string.IsNullOrWhiteSpace(x.document_type)
-                    && x.document_type.Equals("news", StringComparison.OrdinalIgnoreCase));
+                    x => x != null && !string.IsNullOrWhiteSpace(x.document_type));
 
                 var cache = MapperHelper.MapToEntityArray(result);
 

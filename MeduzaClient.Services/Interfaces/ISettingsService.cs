@@ -7,6 +7,7 @@ namespace MeduzaClient.Services.Interfaces
     public interface ISettingsService
     {
         Uri Url { get; }
+        string BaseUrl{get;}
         string SearchUrl { get; }
     }
 }

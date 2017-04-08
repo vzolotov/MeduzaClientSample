@@ -67,6 +67,18 @@ namespace MeduzaClient.MeduzaClient_XamlTypeInfo
             {
                 xamlType = CreateXamlType(typeIndex);
             }
+            var userXamlType = xamlType as global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
+            }
             if (xamlType != null)
             {
                 _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
@@ -90,6 +102,18 @@ namespace MeduzaClient.MeduzaClient_XamlTypeInfo
             if(typeIndex != -1)
             {
                 xamlType = CreateXamlType(typeIndex);
+            }
+            var userXamlType = xamlType as global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
             }
             if (xamlType != null)
             {
@@ -132,49 +156,69 @@ namespace MeduzaClient.MeduzaClient_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[20];
+            _typeNameTable = new string[30];
             _typeNameTable[0] = "MeduzaClient.ViewModels.ViewModelResolver";
             _typeNameTable[1] = "Object";
-            _typeNameTable[2] = "MeduzaClient.Views.BasePage";
-            _typeNameTable[3] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[4] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[5] = "Microsoft.Xaml.Interactivity.Interaction";
-            _typeNameTable[6] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
-            _typeNameTable[7] = "Windows.UI.Xaml.DependencyObjectCollection";
-            _typeNameTable[8] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[9] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
-            _typeNameTable[10] = "Microsoft.Xaml.Interactivity.Trigger";
-            _typeNameTable[11] = "Microsoft.Xaml.Interactivity.Behavior";
-            _typeNameTable[12] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[2] = "WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions";
+            _typeNameTable[3] = "Windows.UI.Core.CoreCursorType";
+            _typeNameTable[4] = "System.Enum";
+            _typeNameTable[5] = "System.ValueType";
+            _typeNameTable[6] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[7] = "Boolean";
+            _typeNameTable[8] = "WinRTXamlToolkit.Controls.Extensions.ClipToBoundsHandler";
+            _typeNameTable[9] = "Windows.UI.Core.CoreCursor";
+            _typeNameTable[10] = "WinRTXamlToolkit.Controls.Extensions.CursorDisplayHandler";
+            _typeNameTable[11] = "MeduzaClient.Views.Controls.CustomGrid";
+            _typeNameTable[12] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[13] = "String";
-            _typeNameTable[14] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
+            _typeNameTable[14] = "System.Collections.Generic.IEnumerable`1<MeduzaClient.Models.Document>";
             _typeNameTable[15] = "System.Windows.Input.ICommand";
-            _typeNameTable[16] = "Windows.UI.Xaml.Data.IValueConverter";
-            _typeNameTable[17] = "MeduzaClient.Views.FirstPage";
-            _typeNameTable[18] = "MeduzaClient.Views.MainPage";
-            _typeNameTable[19] = "MeduzaClient.Views.NewsPage";
+            _typeNameTable[16] = "MeduzaClient.Views.BasePage";
+            _typeNameTable[17] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[18] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[19] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[20] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[21] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
+            _typeNameTable[22] = "Microsoft.Xaml.Interactivity.Trigger";
+            _typeNameTable[23] = "Microsoft.Xaml.Interactivity.Behavior";
+            _typeNameTable[24] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[25] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
+            _typeNameTable[26] = "Windows.UI.Xaml.Data.IValueConverter";
+            _typeNameTable[27] = "MeduzaClient.Views.FirstPage";
+            _typeNameTable[28] = "MeduzaClient.Views.MainPage";
+            _typeNameTable[29] = "MeduzaClient.Views.NewsPage";
 
-            _typeTable = new global::System.Type[20];
+            _typeTable = new global::System.Type[30];
             _typeTable[0] = typeof(global::MeduzaClient.ViewModels.ViewModelResolver);
             _typeTable[1] = typeof(global::System.Object);
-            _typeTable[2] = typeof(global::MeduzaClient.Views.BasePage);
-            _typeTable[3] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[5] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
-            _typeTable[6] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
-            _typeTable[7] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
-            _typeTable[8] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[9] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
-            _typeTable[10] = typeof(global::Microsoft.Xaml.Interactivity.Trigger);
-            _typeTable[11] = typeof(global::Microsoft.Xaml.Interactivity.Behavior);
-            _typeTable[12] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[2] = typeof(global::WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions);
+            _typeTable[3] = typeof(global::Windows.UI.Core.CoreCursorType);
+            _typeTable[4] = typeof(global::System.Enum);
+            _typeTable[5] = typeof(global::System.ValueType);
+            _typeTable[6] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[7] = typeof(global::System.Boolean);
+            _typeTable[8] = typeof(global::WinRTXamlToolkit.Controls.Extensions.ClipToBoundsHandler);
+            _typeTable[9] = typeof(global::Windows.UI.Core.CoreCursor);
+            _typeTable[10] = typeof(global::WinRTXamlToolkit.Controls.Extensions.CursorDisplayHandler);
+            _typeTable[11] = typeof(global::MeduzaClient.Views.Controls.CustomGrid);
+            _typeTable[12] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[13] = typeof(global::System.String);
-            _typeTable[14] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
+            _typeTable[14] = typeof(global::System.Collections.Generic.IEnumerable<global::MeduzaClient.Models.Document>);
             _typeTable[15] = typeof(global::System.Windows.Input.ICommand);
-            _typeTable[16] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
-            _typeTable[17] = typeof(global::MeduzaClient.Views.FirstPage);
-            _typeTable[18] = typeof(global::MeduzaClient.Views.MainPage);
-            _typeTable[19] = typeof(global::MeduzaClient.Views.NewsPage);
+            _typeTable[16] = typeof(global::MeduzaClient.Views.BasePage);
+            _typeTable[17] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[18] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[19] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[20] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[21] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
+            _typeTable[22] = typeof(global::Microsoft.Xaml.Interactivity.Trigger);
+            _typeTable[23] = typeof(global::Microsoft.Xaml.Interactivity.Behavior);
+            _typeTable[24] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[25] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
+            _typeTable[26] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
+            _typeTable[27] = typeof(global::MeduzaClient.Views.FirstPage);
+            _typeTable[28] = typeof(global::MeduzaClient.Views.MainPage);
+            _typeTable[29] = typeof(global::MeduzaClient.Views.NewsPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -210,21 +254,24 @@ namespace MeduzaClient.MeduzaClient_XamlTypeInfo
         }
 
         private object Activate_0_ViewModelResolver() { return new global::MeduzaClient.ViewModels.ViewModelResolver(); }
-        private object Activate_2_BasePage() { return new global::MeduzaClient.Views.BasePage(); }
-        private object Activate_6_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
-        private object Activate_9_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
-        private object Activate_12_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
-        private object Activate_14_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
-        private object Activate_17_FirstPage() { return new global::MeduzaClient.Views.FirstPage(); }
-        private object Activate_18_MainPage() { return new global::MeduzaClient.Views.MainPage(); }
-        private object Activate_19_NewsPage() { return new global::MeduzaClient.Views.NewsPage(); }
-        private void VectorAdd_6_BehaviorCollection(object instance, object item)
+        private object Activate_8_ClipToBoundsHandler() { return new global::WinRTXamlToolkit.Controls.Extensions.ClipToBoundsHandler(); }
+        private object Activate_10_CursorDisplayHandler() { return new global::WinRTXamlToolkit.Controls.Extensions.CursorDisplayHandler(); }
+        private object Activate_11_CustomGrid() { return new global::MeduzaClient.Views.Controls.CustomGrid(); }
+        private object Activate_16_BasePage() { return new global::MeduzaClient.Views.BasePage(); }
+        private object Activate_19_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_21_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
+        private object Activate_24_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
+        private object Activate_25_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
+        private object Activate_27_FirstPage() { return new global::MeduzaClient.Views.FirstPage(); }
+        private object Activate_28_MainPage() { return new global::MeduzaClient.Views.MainPage(); }
+        private object Activate_29_NewsPage() { return new global::MeduzaClient.Views.NewsPage(); }
+        private void VectorAdd_19_BehaviorCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_12_ActionCollection(object instance, object item)
+        private void VectorAdd_24_ActionCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
@@ -252,83 +299,92 @@ namespace MeduzaClient.MeduzaClient_XamlTypeInfo
                 xamlType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  MeduzaClient.Views.BasePage
-                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_2_BasePage;
+            case 2:   //  WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("SystemCursor");
+                userType.AddMemberName("ClipToBounds");
+                userType.AddMemberName("ClipToBoundsHandler");
+                userType.AddMemberName("Cursor");
+                userType.AddMemberName("CursorDisplayHandler");
+                xamlType = userType;
+                break;
+
+            case 3:   //  Windows.UI.Core.CoreCursorType
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType.AddEnumValue("Arrow", global::Windows.UI.Core.CoreCursorType.Arrow);
+                userType.AddEnumValue("Cross", global::Windows.UI.Core.CoreCursorType.Cross);
+                userType.AddEnumValue("Custom", global::Windows.UI.Core.CoreCursorType.Custom);
+                userType.AddEnumValue("Hand", global::Windows.UI.Core.CoreCursorType.Hand);
+                userType.AddEnumValue("Help", global::Windows.UI.Core.CoreCursorType.Help);
+                userType.AddEnumValue("IBeam", global::Windows.UI.Core.CoreCursorType.IBeam);
+                userType.AddEnumValue("SizeAll", global::Windows.UI.Core.CoreCursorType.SizeAll);
+                userType.AddEnumValue("SizeNortheastSouthwest", global::Windows.UI.Core.CoreCursorType.SizeNortheastSouthwest);
+                userType.AddEnumValue("SizeNorthSouth", global::Windows.UI.Core.CoreCursorType.SizeNorthSouth);
+                userType.AddEnumValue("SizeNorthwestSoutheast", global::Windows.UI.Core.CoreCursorType.SizeNorthwestSoutheast);
+                userType.AddEnumValue("SizeWestEast", global::Windows.UI.Core.CoreCursorType.SizeWestEast);
+                userType.AddEnumValue("UniversalNo", global::Windows.UI.Core.CoreCursorType.UniversalNo);
+                userType.AddEnumValue("UpArrow", global::Windows.UI.Core.CoreCursorType.UpArrow);
+                userType.AddEnumValue("Wait", global::Windows.UI.Core.CoreCursorType.Wait);
+                xamlType = userType;
+                break;
+
+            case 4:   //  System.Enum
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                xamlType = userType;
+                break;
+
+            case 5:   //  System.ValueType
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                xamlType = userType;
+                break;
+
+            case 6:   //  Windows.UI.Xaml.DependencyObject
+                xamlType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 7:   //  Boolean
+                xamlType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 8:   //  WinRTXamlToolkit.Controls.Extensions.ClipToBoundsHandler
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 9:   //  Windows.UI.Core.CoreCursor
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 10:   //  WinRTXamlToolkit.Controls.Extensions.CursorDisplayHandler
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 11:   //  MeduzaClient.Views.Controls.CustomGrid
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_11_CustomGrid;
+                userType.AddMemberName("HeaderContent");
+                userType.AddMemberName("ItemsContent");
+                userType.AddMemberName("ItemClickCommand");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 3:   //  Windows.UI.Xaml.Controls.Page
+            case 12:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 4:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 5:   //  Microsoft.Xaml.Interactivity.Interaction
-                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.AddMemberName("Behaviors");
-                xamlType = userType;
-                break;
-
-            case 6:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
-                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_6_BehaviorCollection;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 7:   //  Windows.UI.Xaml.DependencyObjectCollection
-                xamlType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 8:   //  Windows.UI.Xaml.DependencyObject
-                xamlType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 9:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
-                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Trigger"));
-                userType.Activator = Activate_9_EventTriggerBehavior;
-                userType.SetContentPropertyName("Microsoft.Xaml.Interactivity.Trigger.Actions");
-                userType.AddMemberName("EventName");
-                userType.AddMemberName("SourceObject");
-                xamlType = userType;
-                break;
-
-            case 10:   //  Microsoft.Xaml.Interactivity.Trigger
-                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior"));
-                userType.SetContentPropertyName("Microsoft.Xaml.Interactivity.Trigger.Actions");
-                userType.AddMemberName("Actions");
-                xamlType = userType;
-                break;
-
-            case 11:   //  Microsoft.Xaml.Interactivity.Behavior
-                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.AddMemberName("AssociatedObject");
-                xamlType = userType;
-                break;
-
-            case 12:   //  Microsoft.Xaml.Interactivity.ActionCollection
-                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_12_ActionCollection;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
                 break;
 
             case 13:   //  String
                 xamlType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 14:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
-                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_14_InvokeCommandAction;
-                userType.AddMemberName("Command");
-                userType.AddMemberName("CommandParameter");
-                userType.AddMemberName("InputConverter");
-                userType.AddMemberName("InputConverterParameter");
-                userType.AddMemberName("InputConverterLanguage");
+            case 14:   //  System.Collections.Generic.IEnumerable`1<MeduzaClient.Models.Document>
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
@@ -338,27 +394,95 @@ namespace MeduzaClient.MeduzaClient_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 16:   //  Windows.UI.Xaml.Data.IValueConverter
+            case 16:   //  MeduzaClient.Views.BasePage
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_16_BasePage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 17:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 17:   //  MeduzaClient.Views.FirstPage
+            case 18:   //  Microsoft.Xaml.Interactivity.Interaction
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("Behaviors");
+                xamlType = userType;
+                break;
+
+            case 19:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
+                userType.CollectionAdd = VectorAdd_19_BehaviorCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 20:   //  Windows.UI.Xaml.DependencyObjectCollection
+                xamlType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 21:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Trigger"));
+                userType.Activator = Activate_21_EventTriggerBehavior;
+                userType.SetContentPropertyName("Microsoft.Xaml.Interactivity.Trigger.Actions");
+                userType.AddMemberName("EventName");
+                userType.AddMemberName("SourceObject");
+                xamlType = userType;
+                break;
+
+            case 22:   //  Microsoft.Xaml.Interactivity.Trigger
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior"));
+                userType.SetContentPropertyName("Microsoft.Xaml.Interactivity.Trigger.Actions");
+                userType.AddMemberName("Actions");
+                xamlType = userType;
+                break;
+
+            case 23:   //  Microsoft.Xaml.Interactivity.Behavior
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.AddMemberName("AssociatedObject");
+                xamlType = userType;
+                break;
+
+            case 24:   //  Microsoft.Xaml.Interactivity.ActionCollection
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
+                userType.CollectionAdd = VectorAdd_24_ActionCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 25:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
+                userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_25_InvokeCommandAction;
+                userType.AddMemberName("Command");
+                userType.AddMemberName("CommandParameter");
+                userType.AddMemberName("InputConverter");
+                userType.AddMemberName("InputConverterParameter");
+                userType.AddMemberName("InputConverterLanguage");
+                xamlType = userType;
+                break;
+
+            case 26:   //  Windows.UI.Xaml.Data.IValueConverter
+                xamlType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 27:   //  MeduzaClient.Views.FirstPage
                 userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("MeduzaClient.Views.BasePage"));
-                userType.Activator = Activate_17_FirstPage;
+                userType.Activator = Activate_27_FirstPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 18:   //  MeduzaClient.Views.MainPage
+            case 28:   //  MeduzaClient.Views.MainPage
                 userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("MeduzaClient.Views.BasePage"));
-                userType.Activator = Activate_18_MainPage;
+                userType.Activator = Activate_28_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 19:   //  MeduzaClient.Views.NewsPage
+            case 29:   //  MeduzaClient.Views.NewsPage
                 userType = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("MeduzaClient.Views.BasePage"));
-                userType.Activator = Activate_19_NewsPage;
+                userType.Activator = Activate_29_NewsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -366,91 +490,215 @@ namespace MeduzaClient.MeduzaClient_XamlTypeInfo
             return xamlType;
         }
 
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> _otherProviders;
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> OtherProviders
+        {
+            get
+            {
+                if(_otherProviders == null)
+                {
+                    var otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
+                    global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
+                    provider = new global::WinRTXamlToolkit.WinRTXamlToolkit_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    otherProviders.Add(provider); 
+                    _otherProviders = otherProviders;
+                }
+                return _otherProviders;
+            }
+        }
 
-        private object get_0_Interaction_Behaviors(object instance)
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForName(string typeName)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(typeName);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForType(global::System.Type type)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(type);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
+
+        private object get_0_FrameworkElementExtensions_SystemCursor(object instance)
+        {
+            return global::WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.GetSystemCursor((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_0_FrameworkElementExtensions_SystemCursor(object instance, object Value)
+        {
+            global::WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.SetSystemCursor((global::Windows.UI.Xaml.DependencyObject)instance, (global::Windows.UI.Core.CoreCursorType)Value);
+        }
+        private object get_1_FrameworkElementExtensions_ClipToBounds(object instance)
+        {
+            return global::WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.GetClipToBounds((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_1_FrameworkElementExtensions_ClipToBounds(object instance, object Value)
+        {
+            global::WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.SetClipToBounds((global::Windows.UI.Xaml.DependencyObject)instance, (global::System.Boolean)Value);
+        }
+        private object get_2_FrameworkElementExtensions_ClipToBoundsHandler(object instance)
+        {
+            return global::WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.GetClipToBoundsHandler((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_2_FrameworkElementExtensions_ClipToBoundsHandler(object instance, object Value)
+        {
+            global::WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.SetClipToBoundsHandler((global::Windows.UI.Xaml.DependencyObject)instance, (global::WinRTXamlToolkit.Controls.Extensions.ClipToBoundsHandler)Value);
+        }
+        private object get_3_FrameworkElementExtensions_Cursor(object instance)
+        {
+            return global::WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.GetCursor((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_3_FrameworkElementExtensions_Cursor(object instance, object Value)
+        {
+            global::WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.SetCursor((global::Windows.UI.Xaml.DependencyObject)instance, (global::Windows.UI.Core.CoreCursor)Value);
+        }
+        private object get_4_FrameworkElementExtensions_CursorDisplayHandler(object instance)
+        {
+            return global::WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.GetCursorDisplayHandler((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_4_FrameworkElementExtensions_CursorDisplayHandler(object instance, object Value)
+        {
+            global::WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.SetCursorDisplayHandler((global::Windows.UI.Xaml.DependencyObject)instance, (global::WinRTXamlToolkit.Controls.Extensions.CursorDisplayHandler)Value);
+        }
+        private object get_5_CustomGrid_HeaderContent(object instance)
+        {
+            var that = (global::MeduzaClient.Views.Controls.CustomGrid)instance;
+            return that.HeaderContent;
+        }
+        private void set_5_CustomGrid_HeaderContent(object instance, object Value)
+        {
+            var that = (global::MeduzaClient.Views.Controls.CustomGrid)instance;
+            that.HeaderContent = (global::System.String)Value;
+        }
+        private object get_6_CustomGrid_ItemsContent(object instance)
+        {
+            var that = (global::MeduzaClient.Views.Controls.CustomGrid)instance;
+            return that.ItemsContent;
+        }
+        private void set_6_CustomGrid_ItemsContent(object instance, object Value)
+        {
+            var that = (global::MeduzaClient.Views.Controls.CustomGrid)instance;
+            that.ItemsContent = (global::System.Collections.Generic.IEnumerable<global::MeduzaClient.Models.Document>)Value;
+        }
+        private object get_7_CustomGrid_ItemClickCommand(object instance)
+        {
+            var that = (global::MeduzaClient.Views.Controls.CustomGrid)instance;
+            return that.ItemClickCommand;
+        }
+        private void set_7_CustomGrid_ItemClickCommand(object instance, object Value)
+        {
+            var that = (global::MeduzaClient.Views.Controls.CustomGrid)instance;
+            that.ItemClickCommand = (global::System.Windows.Input.ICommand)Value;
+        }
+        private object get_8_Interaction_Behaviors(object instance)
         {
             return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
         }
-        private void set_0_Interaction_Behaviors(object instance, object Value)
+        private void set_8_Interaction_Behaviors(object instance, object Value)
         {
             global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
         }
-        private object get_1_Trigger_Actions(object instance)
+        private object get_9_Trigger_Actions(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactivity.Trigger)instance;
             return that.Actions;
         }
-        private object get_2_EventTriggerBehavior_EventName(object instance)
+        private object get_10_EventTriggerBehavior_EventName(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.EventName;
         }
-        private void set_2_EventTriggerBehavior_EventName(object instance, object Value)
+        private void set_10_EventTriggerBehavior_EventName(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             that.EventName = (global::System.String)Value;
         }
-        private object get_3_EventTriggerBehavior_SourceObject(object instance)
+        private object get_11_EventTriggerBehavior_SourceObject(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.SourceObject;
         }
-        private void set_3_EventTriggerBehavior_SourceObject(object instance, object Value)
+        private void set_11_EventTriggerBehavior_SourceObject(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             that.SourceObject = (global::System.Object)Value;
         }
-        private object get_4_Behavior_AssociatedObject(object instance)
+        private object get_12_Behavior_AssociatedObject(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactivity.Behavior)instance;
             return that.AssociatedObject;
         }
-        private object get_5_InvokeCommandAction_Command(object instance)
+        private object get_13_InvokeCommandAction_Command(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.Command;
         }
-        private void set_5_InvokeCommandAction_Command(object instance, object Value)
+        private void set_13_InvokeCommandAction_Command(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.Command = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_6_InvokeCommandAction_CommandParameter(object instance)
+        private object get_14_InvokeCommandAction_CommandParameter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.CommandParameter;
         }
-        private void set_6_InvokeCommandAction_CommandParameter(object instance, object Value)
+        private void set_14_InvokeCommandAction_CommandParameter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.CommandParameter = (global::System.Object)Value;
         }
-        private object get_7_InvokeCommandAction_InputConverter(object instance)
+        private object get_15_InvokeCommandAction_InputConverter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverter;
         }
-        private void set_7_InvokeCommandAction_InputConverter(object instance, object Value)
+        private void set_15_InvokeCommandAction_InputConverter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverter = (global::Windows.UI.Xaml.Data.IValueConverter)Value;
         }
-        private object get_8_InvokeCommandAction_InputConverterParameter(object instance)
+        private object get_16_InvokeCommandAction_InputConverterParameter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverterParameter;
         }
-        private void set_8_InvokeCommandAction_InputConverterParameter(object instance, object Value)
+        private void set_16_InvokeCommandAction_InputConverterParameter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverterParameter = (global::System.Object)Value;
         }
-        private object get_9_InvokeCommandAction_InputConverterLanguage(object instance)
+        private object get_17_InvokeCommandAction_InputConverterLanguage(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverterLanguage;
         }
-        private void set_9_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
+        private void set_17_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverterLanguage = (global::System.String)Value;
@@ -463,75 +711,136 @@ namespace MeduzaClient.MeduzaClient_XamlTypeInfo
 
             switch (longMemberName)
             {
+            case "WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.SystemCursor":
+                userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions");
+                xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "SystemCursor", "Windows.UI.Core.CoreCursorType");
+                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
+                xamlMember.SetIsAttachable();
+                xamlMember.Getter = get_0_FrameworkElementExtensions_SystemCursor;
+                xamlMember.Setter = set_0_FrameworkElementExtensions_SystemCursor;
+                break;
+            case "WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.ClipToBounds":
+                userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions");
+                xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "ClipToBounds", "Boolean");
+                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
+                xamlMember.SetIsAttachable();
+                xamlMember.Getter = get_1_FrameworkElementExtensions_ClipToBounds;
+                xamlMember.Setter = set_1_FrameworkElementExtensions_ClipToBounds;
+                break;
+            case "WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.ClipToBoundsHandler":
+                userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions");
+                xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "ClipToBoundsHandler", "WinRTXamlToolkit.Controls.Extensions.ClipToBoundsHandler");
+                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
+                xamlMember.SetIsAttachable();
+                xamlMember.Getter = get_2_FrameworkElementExtensions_ClipToBoundsHandler;
+                xamlMember.Setter = set_2_FrameworkElementExtensions_ClipToBoundsHandler;
+                break;
+            case "WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.Cursor":
+                userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions");
+                xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "Cursor", "Windows.UI.Core.CoreCursor");
+                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
+                xamlMember.SetIsAttachable();
+                xamlMember.Getter = get_3_FrameworkElementExtensions_Cursor;
+                xamlMember.Setter = set_3_FrameworkElementExtensions_Cursor;
+                break;
+            case "WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions.CursorDisplayHandler":
+                userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.Extensions.FrameworkElementExtensions");
+                xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "CursorDisplayHandler", "WinRTXamlToolkit.Controls.Extensions.CursorDisplayHandler");
+                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
+                xamlMember.SetIsAttachable();
+                xamlMember.Getter = get_4_FrameworkElementExtensions_CursorDisplayHandler;
+                xamlMember.Setter = set_4_FrameworkElementExtensions_CursorDisplayHandler;
+                break;
+            case "MeduzaClient.Views.Controls.CustomGrid.HeaderContent":
+                userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MeduzaClient.Views.Controls.CustomGrid");
+                xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "HeaderContent", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_5_CustomGrid_HeaderContent;
+                xamlMember.Setter = set_5_CustomGrid_HeaderContent;
+                break;
+            case "MeduzaClient.Views.Controls.CustomGrid.ItemsContent":
+                userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MeduzaClient.Views.Controls.CustomGrid");
+                xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "ItemsContent", "System.Collections.Generic.IEnumerable`1<MeduzaClient.Models.Document>");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_6_CustomGrid_ItemsContent;
+                xamlMember.Setter = set_6_CustomGrid_ItemsContent;
+                break;
+            case "MeduzaClient.Views.Controls.CustomGrid.ItemClickCommand":
+                userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MeduzaClient.Views.Controls.CustomGrid");
+                xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "ItemClickCommand", "System.Windows.Input.ICommand");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_7_CustomGrid_ItemClickCommand;
+                xamlMember.Setter = set_7_CustomGrid_ItemClickCommand;
+                break;
             case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
                 userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
                 xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_0_Interaction_Behaviors;
-                xamlMember.Setter = set_0_Interaction_Behaviors;
+                xamlMember.Getter = get_8_Interaction_Behaviors;
+                xamlMember.Setter = set_8_Interaction_Behaviors;
                 break;
             case "Microsoft.Xaml.Interactivity.Trigger.Actions":
                 userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Trigger");
                 xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_1_Trigger_Actions;
+                xamlMember.Getter = get_9_Trigger_Actions;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName":
                 userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "EventName", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_2_EventTriggerBehavior_EventName;
-                xamlMember.Setter = set_2_EventTriggerBehavior_EventName;
+                xamlMember.Getter = get_10_EventTriggerBehavior_EventName;
+                xamlMember.Setter = set_10_EventTriggerBehavior_EventName;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject":
                 userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_3_EventTriggerBehavior_SourceObject;
-                xamlMember.Setter = set_3_EventTriggerBehavior_SourceObject;
+                xamlMember.Getter = get_11_EventTriggerBehavior_SourceObject;
+                xamlMember.Setter = set_11_EventTriggerBehavior_SourceObject;
                 break;
             case "Microsoft.Xaml.Interactivity.Behavior.AssociatedObject":
                 userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior");
                 xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
-                xamlMember.Getter = get_4_Behavior_AssociatedObject;
+                xamlMember.Getter = get_12_Behavior_AssociatedObject;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command":
                 userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "Command", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_5_InvokeCommandAction_Command;
-                xamlMember.Setter = set_5_InvokeCommandAction_Command;
+                xamlMember.Getter = get_13_InvokeCommandAction_Command;
+                xamlMember.Setter = set_13_InvokeCommandAction_Command;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter":
                 userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "CommandParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_6_InvokeCommandAction_CommandParameter;
-                xamlMember.Setter = set_6_InvokeCommandAction_CommandParameter;
+                xamlMember.Getter = get_14_InvokeCommandAction_CommandParameter;
+                xamlMember.Setter = set_14_InvokeCommandAction_CommandParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter":
                 userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "InputConverter", "Windows.UI.Xaml.Data.IValueConverter");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_7_InvokeCommandAction_InputConverter;
-                xamlMember.Setter = set_7_InvokeCommandAction_InputConverter;
+                xamlMember.Getter = get_15_InvokeCommandAction_InputConverter;
+                xamlMember.Setter = set_15_InvokeCommandAction_InputConverter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter":
                 userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "InputConverterParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_8_InvokeCommandAction_InputConverterParameter;
-                xamlMember.Setter = set_8_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Getter = get_16_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Setter = set_16_InvokeCommandAction_InputConverterParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage":
                 userType = (global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::MeduzaClient.MeduzaClient_XamlTypeInfo.XamlMember(this, "InputConverterLanguage", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_9_InvokeCommandAction_InputConverterLanguage;
-                xamlMember.Setter = set_9_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Getter = get_17_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Setter = set_17_InvokeCommandAction_InputConverterLanguage;
                 break;
             }
             return xamlMember;

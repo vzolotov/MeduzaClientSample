@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-07T22:46:24.762</Modified>
+      <Modified>2017-04-08T12:14:44.580</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\MeduzaClient.exe">
       <PackagePath>entrypoint\MeduzaClient.exe</PackagePath>
-      <Modified>2017-04-07T22:46:23.601</Modified>
+      <Modified>2017-04-08T12:14:42.486</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\Autofac\4.5.0\lib\netstandard1.1\Autofac.dll">
       <PackagePath>Autofac.dll</PackagePath>
@@ -639,17 +639,21 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-11T20:15:04.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\WinRTXamlToolkit\2.3.0\lib\uap10.0\WinRTXamlToolkit.dll">
+      <PackagePath>WinRTXamlToolkit.dll</PackagePath>
+      <Modified>2017-02-12T09:18:48.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Models\bin\Debug\netstandard1.4\MeduzaClient.Models.dll">
       <PackagePath>MeduzaClient.Models.dll</PackagePath>
-      <Modified>2017-04-07T22:25:52.551</Modified>
+      <Modified>2017-04-08T10:45:05.332</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.Services\bin\Debug\netstandard1.4\MeduzaClient.Services.dll">
       <PackagePath>MeduzaClient.Services.dll</PackagePath>
-      <Modified>2017-04-07T22:44:55.377</Modified>
+      <Modified>2017-04-08T12:14:38.012</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient.ViewModels\bin\Debug\netstandard1.4\MeduzaClient.ViewModels.dll">
       <PackagePath>MeduzaClient.ViewModels.dll</PackagePath>
-      <Modified>2017-04-07T22:44:55.926</Modified>
+      <Modified>2017-04-08T12:14:38.399</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -691,20 +695,28 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\MeduzaClient.xr.xml">
       <PackagePath>MeduzaClient.xr.xml</PackagePath>
-      <Modified>2017-04-07T17:42:52.779</Modified>
+      <Modified>2017-04-08T12:07:07.431</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-04-06T10:54:32.089</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\WinRTXamlToolkit\2.3.0\lib\uap10.0\WinRTXamlToolkit\WinRTXamlToolkit.xr.xml">
+      <PackagePath>WinRTXamlToolkit\WinRTXamlToolkit.xr.xml</PackagePath>
+      <Modified>2017-02-12T09:18:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Slava\.nuget\packages\WinRTXamlToolkit\2.3.0\lib\uap10.0\WinRTXamlToolkit\Properties\WinRTXamlToolkit.rd.xml">
+      <PackagePath>WinRTXamlToolkit\Properties\WinRTXamlToolkit.rd.xml</PackagePath>
+      <Modified>2017-02-12T09:18:50.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-07T22:46:24.308</Modified>
+      <Modified>2017-04-08T12:14:43.902</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Slava\documents\visual studio 2017\Projects\MeduzaClient\MeduzaClient\bin\x86\Debug\Core\MeduzaClient.exe">
       <PackagePath>MeduzaClient.exe</PackagePath>
-      <Modified>2017-04-07T22:46:24.757</Modified>
+      <Modified>2017-04-08T12:14:44.569</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -6,12 +6,14 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:extensions="using:WinRTXamlToolkit.Controls.Extensions"
     DataContext="{Binding NewsViewModel, Mode=OneWay, Source={StaticResource Locator}}">
 
     <Grid 
         Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
         DataContext="{Binding Document}">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -22,5 +24,10 @@
             Grid.Row="1"
             Text="{Binding Title}"
             Style="{StaticResource HeaderTextBlockStyle}"/>
+        <TextBlock 
+            Grid.Row="2"
+            Text="Подробнее"
+            extensions:FrameworkElementExtensions.SystemCursor="Hand"
+            Style="{StaticResource CaptionTextBlockStyle}"/>
     </Grid>
 </local:BasePage>
