@@ -5,11 +5,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:datatype="using:MeduzaClient.Models"
-    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:controls="using:MeduzaClient.Views.Controls"
     x:Class="MeduzaClient.Views.MainPage"
-    mc:Ignorable="d" 
-    Name="page"
+    mc:Ignorable="d"
     DataContext="{Binding MainViewModel, Mode=OneWay, Source={StaticResource Locator}}">
     <controls:CustomGrid
         HeaderContent="Новости"

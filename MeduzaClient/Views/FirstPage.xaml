@@ -23,7 +23,7 @@
                 <RadioButton Style="{StaticResource SplitViewMenuButtonStyle}" Click="OnMenuButtonClicked" />
 
                 <!-- Home button -->
-                <RadioButton Tag="&#xE10F;" Content="Home" Style="{StaticResource SplitViewNavButtonStyle}" IsChecked="True" >
+                <RadioButton Tag="&#xE10F;" Content="Новости" Style="{StaticResource SplitViewNavButtonStyle}" IsChecked="True" >
                     <Interactivity:Interaction.Behaviors>
                         <Core:EventTriggerBehavior EventName="Click">
                             <Core:InvokeCommandAction Command="{Binding GotoHomeCommand}"/>

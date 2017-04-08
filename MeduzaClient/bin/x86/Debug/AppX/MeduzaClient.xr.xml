@@ -11,6 +11,8 @@
     <RootPropertyPathName Name="NavigateToNewsCommand" />
     <RootPropertyPathName Name="NewsViewModel" />
     <RootPropertyPathName Name="Document" />
+    <RootPropertyPathName Name="DataContext" />
+    <RootPropertyPathName Name="ShowDocumentCommand" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -34,6 +36,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Foreground" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.FrameworkElement">
       <RootProperty Name="VerticalAlignment" />
@@ -207,7 +210,6 @@
     <RootType FullName="MeduzaClient.Views.BasePage">
       <RootProperty Name="DataContext" />
       <RootProperty Name="Content" />
-      <RootProperty Name="Name" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
       <RootProperty Name="DisplayMode" />

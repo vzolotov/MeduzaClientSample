@@ -7,7 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     xmlns:extensions="using:WinRTXamlToolkit.Controls.Extensions"
-    DataContext="{Binding NewsViewModel, Mode=OneWay, Source={StaticResource Locator}}">
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    DataContext="{Binding NewsViewModel, Mode=OneWay, Source={StaticResource Locator}}"
+    x:Name="page">
 
     <Grid 
         Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
@@ -20,14 +23,21 @@
         <TextBlock 
             Text="{Binding Title}"
             Style="{StaticResource HeaderTextBlockStyle}"/>
-        <TextBlock 
-            Grid.Row="1"
-            Text="{Binding Title}"
-            Style="{StaticResource HeaderTextBlockStyle}"/>
+
         <TextBlock 
             Grid.Row="2"
             Text="Подробнее"
             extensions:FrameworkElementExtensions.SystemCursor="Hand"
-            Style="{StaticResource CaptionTextBlockStyle}"/>
+            Style="{StaticResource BodyTextBlockStyle}"
+            Foreground="Blue"
+            HorizontalAlignment="Left"
+            Margin="10, 50">
+            <Interactivity:Interaction.Behaviors>
+                <Core:EventTriggerBehavior EventName="Tapped">
+                    <Core:InvokeCommandAction
+                        Command="{Binding DataContext.ShowDocumentCommand, ElementName=page}"/>
+                </Core:EventTriggerBehavior>
+            </Interactivity:Interaction.Behaviors>
+        </TextBlock>
     </Grid>
 </local:BasePage>

@@ -19,7 +19,12 @@ namespace MeduzaClient.Services
         {
             var path = Path.Combine(_settings.BaseUrl, urlPath);
             var uri = new Uri(path, UriKind.RelativeOrAbsolute);
-            var success = await Launcher.LaunchUriAsync(uri);
+            var success = await Launcher.LaunchUriAsync(uri, 
+                    new LauncherOptions()
+                    {
+                        DesiredRemainingView = Windows.UI.ViewManagement.ViewSizePreference.UseMore
+                    }
+                );
             if (!success)
             {
                 await _notify.ShowMessageAsync("Ошибка открытия ссылки");
